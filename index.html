@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staňte se partnerem Bewit | Pasivní příjem s provizí až 30 %</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === DESIGN SYSTÉM === */
+        :root {
+            --color-primary: #5BA4CF;      /* Světle modrá */
+            --color-accent: #97C93D;       /* Světle zelená */
+            --color-background: #FFFFFF;   /* Bílá */
+            --color-text: #333333;         /* Tmavě šedá */
+            --color-white: #FFFFFF;
+            --color-border: #E0E0E0;
+            --color-light-bg: #F5F5F5;     /* Světle šedá pro pozadí */
+
+            --font-heading: 'Open Sans', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+
+            --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --border-radius: 8px;
+        }
+
+        /* === ZÁKLADNÍ RESET A STYLY === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* === KONTEJNER A SEKCE === */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        /* === TYPOGRAFIE === */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h1 { font-size: 48px; }
+        h2 { font-size: 36px; text-align: center; margin-bottom: 50px; }
+        h3 { font-size: 20px; font-family: var(--font-body); font-weight: 600; color: var(--color-text); }
+        p { margin-bottom: 1rem; line-height: 1.8; }
+
+        .affiliate-inline {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* === TLAČÍTKA === */
+        .btn {
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            box-shadow: 0 2px 6px rgba(151, 201, 61, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #8BC234;
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(151, 201, 61, 0.4);
+        }
+
+        /* === BLOK 1: HERO SEKCE === */
+        .hero {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg-circle, .hero-bg-dot {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        .hero-bg-circle { left: -150px; top: -150px; }
+        .hero-bg-dot { right: 40px; bottom: 40px; opacity: 0.09; }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-text { flex: 1; }
+        .hero-text .sub-heading {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .hero-text h1 { margin: 15px 0 25px 0; }
+        .hero-text p { font-size: 18px; max-width: 500px; }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-image img {
+            /* border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium); */
+            max-width: 450px;
+            width: 100%;
+        }
+
+        /* === BLOK 2: O NÁS A VÝHODY === */
+        .about-us {
+            background-color: var(--color-light-bg);
+        }
+        .about-us .intro-text {
+            max-width: 750px;
+            margin: -40px auto 70px auto;
+            text-align: center;
+            font-size: 17px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        .benefit-item {
+            text-align: center;
+            padding: 35px 25px;
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-border);
+        }
+        .benefit-item:hover {
+             transform: translateY(-3px);
+             box-shadow: var(--shadow-medium);
+             border-color: var(--color-accent);
+        }
+        .benefit-item .icon { color: var(--color-accent); margin-bottom: 15px; }
+        .benefit-item h3 { margin-bottom: 12px; }
+
+        /* === BLOK 3: JAK ZÍSKAT ODMĚNY === */
+        .rewards { background-color: var(--color-white); }
+        .reward-highlight { text-align: center; margin: 40px 0 60px 0; }
+        .reward-highlight .percentage {
+            font-family: var(--font-heading);
+            font-size: 120px;
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+        .reward-highlight p { font-size: 20px; color: var(--color-text); font-weight: 600; }
+        .how-it-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+        .how-item { text-align: center; }
+        .how-item .icon { color: var(--color-accent); margin-bottom: 18px; }
+        .how-item h3 { margin-bottom: 12px; }
+        .rewards .note { text-align: center; margin-top: 35px; margin-bottom: 35px; font-style: italic; color: #666; }
+
+        /* === BLOK 4: KALKULAČKY (S VLNAMI) === */
+        #calculator-section {
+            background: transparent;
+            padding: 0;
+            overflow: hidden;
+        }
+        .wave-top, .wave-bottom {
+            line-height: 0;
+        }
+        .wave-top svg, .wave-bottom svg {
+            display: block;
+            width: 100%;
+            height: 100px;
+            position: relative;
+            z-index: 1;
+        }
+        .calculator-bg {
+            background: var(--color-light-bg);
+            padding: 70px 0;
+        }
+        .calculator-wrapper-custom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 35px;
+        }
+        .calculator-box {
+            background-color: var(--color-white);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+            border-top: 4px solid var(--color-accent);
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid var(--color-border);
+        }
+        .separator-text-custom {
+            text-align: center;
+            max-width: 350px;
+        }
+        /* Styly pro posuvník */
+        .calculator-box input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            outline: none;
+            margin: 25px 0;
+            cursor: pointer;
+        }
+        .calculator-box input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px; /* Mírně menší pro lepší pocit */
+            height: 30px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            box-shadow: 0 2px 8px rgba(217,162,138,0.4);
+            border: 3px solid var(--color-white);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .calculator-box input[type="range"]::-moz-range-thumb {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            box-shadow: 0 2px 8px rgba(217,162,138,0.4);
+            border: 3px solid var(--color-white);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .calculator-box input[type="range"]::-webkit-slider-thumb:hover,
+        .calculator-box input[type="range"]::-moz-range-thumb:hover {
+            background: var(--color-primary);
+        }
+        .calculator-box .reward-value {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: 12px 0;
+        }
+
+        
+        /* === BLOK 6: TESTIMONIÁLY === */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-1 * (480px * 4))); } /* (šířka karty + mezera) * počet karet */
+        }
+        .testimonial-section { background-color: var(--color-light-bg); }
+        .testimonial-slider { overflow: hidden; padding: 20px 0; white-space: nowrap; }
+        .testimonial-track { 
+            display: flex; 
+            /* ZMĚNA: Přesný výpočet šířky pro 4+4 karty */
+            width: calc((450px + 30px) * 8); 
+            animation: scroll 90s linear infinite; 
+        }
+        .testimonial-card {
+            display: inline-flex;
+            flex-direction: column;
+            width: 450px; /* ZMĚNA: Širší karta pro obdélníkový tvar */
+            margin: 0 15px;
+            padding: 30px;
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-subtle);
+            white-space: normal;
+            border: 1px solid var(--color-border);
+        }
+        .testimonial-card .quote-icon { color: var(--color-accent); margin-bottom: 12px; }
+        .testimonial-card .quote {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            line-height: 1.6;
+            flex-grow: 1;
+            font-weight: 400;
+        }
+        .testimonial-card .author-info {
+            margin-top: 20px;
+            border-top: 1px solid var(--color-border);
+            padding-top: 20px;
+        }
+        .author-info .author { font-weight: 600; }
+        .author-info .earnings { font-size: 14px; color: var(--color-primary); font-weight: 600; }
+
+        /* === BLOK 7: ÚSPĚŠNOST === */
+        .success-rate { background: var(--color-white); position:relative; overflow:hidden; }
+        .success-bg-circle {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.05;
+        }
+        .comparison-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 50px;
+            border: 2px dashed var(--color-border);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            position: relative;
+            z-index: 1;
+        }
+        .comparison-item .value {
+            font-family: var(--font-heading);
+            font-size: 72px;
+            font-weight: 800;
+        }
+        .comparison-item-grey .value,
+        .value-grey {
+            color: #CCCCCC;
+            opacity: 0.7;
+            filter: grayscale(1);
+        }
+        .comparison-item-grey {
+            opacity: 0.7;
+        }
+        .comparison-item-highlight {
+            background: #f0f8f0;
+            border: 2px solid var(--color-accent);
+            box-shadow: 0 4px 16px rgba(151, 201, 61, 0.15);
+            border-radius: var(--border-radius);
+            padding: 35px 25px;
+            position: relative;
+            z-index: 2;
+        }
+        .comparison-item-highlight .value,
+        .value-highlight {
+            color: var(--color-primary);
+            text-shadow: 0 2px 8px rgba(91, 164, 207, 0.1);
+        }
+        .comparison-item p { max-width: 250px; margin: 0 auto; }
+        .divider-vertical {
+            width: 2px;
+            height: 90px;
+            background-color: var(--color-border);
+        }
+        .success-rate .outro { text-align: center; margin-top: 35px; font-size: 17px; font-weight: 400; }
+
+        /* === BLOK 8: MAPA === */
+        .world-map {
+            background-color: var(--color-light-bg);
+        }
+        .world-map p {
+            text-align: center;
+            max-width: 700px;
+            margin: -35px auto 35px auto;
+        }
+        .world-map img {
+            display: block;
+            margin: 0 auto;
+            /* ZMĚNA: Odstraněn filtr, přidána menší max-width */
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* === BLOK 9: SHRNUTÍ === */
+        .summary {
+            background-color: var(--color-white);
+        }
+        .summary ul {
+            list-style: none;
+            max-width: 850px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px 35px;
+            font-size: 16px;
+        }
+        .summary li { display: flex; align-items: flex-start; }
+        .summary li .icon { color: var(--color-accent); margin-right: 12px; flex-shrink: 0; margin-top: 3px; }
+        .summary .cta-wrapper { text-align: center; margin-top: 50px; }
+
+        /* === BLOK 10: FORMULÁŘ === */
+        .contact-form { background-color: var(--color-primary); color: var(--color-white); }
+        .contact-form h2 { color: var(--color-white); }
+        .form-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 60px; 
+            max-width: 1900px; 
+            margin: 0 auto; 
+        }
+        .form-image { 
+            flex: 1; 
+            text-align: center; 
+        }
+        .form-image img { 
+            max-width:700px;
+            width: 100%;
+            height: auto;
+        }
+        .form-content { 
+            flex: 1; 
+            text-align: left; 
+        }
+        .form-content h2 { 
+            text-align: left; 
+            margin-bottom: 20px; 
+        }
+        .form-content p { 
+            text-align: left; 
+            margin-bottom: 30px; 
+        }
+        .form-container p { margin-bottom: 30px; opacity: 0.9; }
+        .form-container input {
+            width: 100%;
+            padding: 18px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-family: var(--font-body);
+        }
+        .form-container input::placeholder { color: rgba(255,255,255,0.6); }
+        .form-container .btn { width: 100%; }
+        .form-container .bonus-text { font-size: 14px; margin-top: 20px; opacity: 0.8; }
+
+        /* === BLOK 11: FAQ === */
+        .faq {
+            background-color: var(--color-light-bg);
+        }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { 
+            border-bottom: 1px solid var(--color-border);
+            background-color: var(--color-white);
+            margin-bottom: 12px;
+            border-radius: var(--border-radius);
+            padding: 0 20px;
+        }
+        .faq-item summary {
+            font-weight: 600;
+            font-size: 17px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item .icon { color: var(--color-primary); transition: transform 0.3s ease; }
+        .faq-item[open] summary .icon { transform: rotate(45deg); }
+        .faq-item .answer { padding-bottom: 20px; color: #666; max-width: 95%; line-height: 1.7; }
+
+        /* === RESPONZIVNÍ DESIGN === */
+        @media (max-width: 992px) {
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .summary ul { grid-template-columns: 1fr; }
+            .form-container { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 40px; 
+            }
+            .form-content h2, 
+            .form-content p { 
+                text-align: center; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 15px; }
+            .section { padding: 70px 0; }
+            h1 { font-size: 36px; }
+            h2 { font-size: 30px; margin-bottom: 35px; }
+            .how-it-works-grid { grid-template-columns: 1fr; }
+            .comparison-flex { flex-direction: column; padding: 35px 20px; gap: 35px; }
+            .divider-vertical { display: none; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .wave-top svg, .wave-bottom svg { height: 70px; }
+            .calculator-bg { padding: 35px 0; }
+        }
+
+        /* === BĚHACÍ TEXT PO KŘIVCE === */
+        .curved-loop-section {
+          position: relative;
+          height: 120px;
+          width: 100vw;
+          margin-left: calc(-50vw + 50%);
+          margin-right: calc(-50vw + 50%);
+          margin-top: 60px;
+          padding: 0;
+          overflow: hidden;
+          background: transparent;
+        }
+
+        .curved-loop-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100vw;
+        }
+
+        .curved-loop-svg {
+          position: absolute;
+          width: 100vw;
+          aspect-ratio: 100 / 12;
+          overflow: visible;
+          display: block;
+        }
+
+        .curved-loop-text {
+          font-family: var(--font-body);
+          font-size: 48px;
+          font-weight: 800;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          fill: var(--color-primary);
+          stroke: #fff;
+          stroke-width: 1px;
+          paint-order: stroke fill;
+        }
+
+        @media (max-width: 768px) {
+          .curved-loop-section {
+            height: 80px;
+            margin-top: 40px;
+          }
+          .curved-loop-text {
+            font-size: 86px;
+          }
+        }
+
+        /* === ANIMOVANÝ SLOUPCOVÝ GRAF S EXPONENCIÁLNÍ KŘIVKOU === */
+        .animated-bar-chart-section {
+            padding: 100px 0;
+            background: var(--color-white);
+        }
+        .bar-chart-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bar-chart-svg {
+            width: 700px;
+            height: 340px;
+        }
+        .axes {
+            stroke: var(--color-border);
+            stroke-width: 2;
+        }
+        .bars {
+            fill: none;
+            stroke-width: 4;
+        }
+        .bar-brown { fill: #97C93D; rx: 0; }
+        .bar-green { fill: #5BA4CF; rx: 0; }
+        .x-labels {
+            font-size: 15px;
+            fill: var(--color-text);
+            font-weight: 600;
+        }
+        .x-labels text {
+            text-anchor: middle;
+        }
+        .trend-group {
+            opacity: 0;
+        }
+        .trend-curve {
+            stroke: var(--color-primary);
+            stroke-width: 4;
+            marker-end: url(#arrowhead);
+        }
+        .trend-glint {
+            fill: white;
+            fill-opacity: 0.7;
+            filter: blur(4px);
+            opacity: 0;
+        }
+        .legend-brown, .legend-green {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legend-color {
+            width: 18px;
+            height: 18px;
+            border-radius: 3px;
+        }
+        .bar-chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 16px;
+        }
+        @media (min-width: 769px) {
+            .bar-chart-title {
+                margin-bottom: 56px;
+            }
+        }
+        /* === NOVÝ BLOK: NEJSME MLM, ALE PARTNERSTVÍ === */
+        .not-mlm-section {
+            background: var(--color-light-bg);
+            margin-top: 0;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        .not-mlm-section .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        .not-mlm-section .container > div {
+            flex: 1;
+            min-width: 320px;
+        }
+        .not-mlm-section h2 {
+            color: var(--color-primary);
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .not-mlm-section ul {
+            list-style: none;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .not-mlm-section ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .not-mlm-section ul li .icon {
+            color: var(--color-accent);
+            font-size: 20px;
+            margin-right: 10px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .not-mlm-section ul li span:last-child {
+            color: var(--color-text);
+            font-size: 16px;
+            font-family: var(--font-body);
+            font-weight: 400;
+        }
+        .not-mlm-section .svg-container {
+            text-align: center;
+        }
+        .not-mlm-section svg {
+            max-width: 100%;
+        }
+        @media (max-width: 768px) {
+            .not-mlm-section .container {
+                flex-direction: column;
+                gap: 25px;
+            }
+            .not-mlm-section h2 {
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+
+        /* === BLOK: POZVÁNÍ NA KÁVU === */
+        .coffee-invitation-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #4A8DB5 100%);
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+        .coffee-invitation-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.06)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .coffee-video-container {
+            max-width: 400px;
+            margin: 0 auto 30px auto;
+            position: relative;
+            z-index: 2;
+        }
+        .coffee-video-container video {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        @media (max-width: 768px) {
+            .coffee-video-container {
+                max-width: 600px;
+            }
+            .coffee-video-container video {
+                max-height: none;
+            }
+        }
+        .coffee-invitation-section h2 {
+            color: var(--color-white);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .coffee-invitation-section .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        .coffee-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .coffee-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .coffee-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .coffee-form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        .coffee-form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--color-white);
+        }
+        .coffee-form-group input,
+        .coffee-form-group select {
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--color-white);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .coffee-form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .coffee-form-group input:focus,
+        .coffee-form-group select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(217, 162, 138, 0.3);
+        }
+        /* Custom select styling */
+        .custom-select {
+            position: relative;
+        }
+        .custom-select-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--color-white);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .custom-select-trigger:hover,
+        .custom-select-trigger.active {
+            border-color: var(--color-accent);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(151, 201, 61, 0.3);
+        }
+        .custom-select-trigger.placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .custom-select-arrow {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease;
+        }
+        .custom-select-trigger.active .custom-select-arrow {
+            transform: rotate(180deg);
+            border-top-color: var(--color-accent);
+        }
+        .custom-select-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(91, 164, 207, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            margin-top: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .custom-select-options.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .custom-select-option {
+            padding: 12px 15px;
+            color: var(--color-white);
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .custom-select-option:last-child {
+            border-bottom: none;
+        }
+        .custom-select-option:hover,
+        .custom-select-option.highlighted {
+            background: rgba(151, 201, 61, 0.3);
+        }
+        .custom-select-option.selected {
+            background: var(--color-accent);
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        .custom-select-option.placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+            cursor: default;
+        }
+        .custom-select-option.placeholder:hover {
+            background: transparent;
+        }
+        /* Skrytí původního selectu */
+        .custom-select select {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .coffee-form-group .optional {
+            font-size: 14px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        .coffee-preferences {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .coffee-preference-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .coffee-preference-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .coffee-preference-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            pointer-events: none; /* Zabráníme přímému klikání na checkbox */
+        }
+        .coffee-preference-item input[type="checkbox"]:checked {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+        .coffee-preference-item input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .coffee-preference-item label {
+            cursor: pointer;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .coffee-submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--color-accent);
+            color: var(--color-white);
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(151, 201, 61, 0.4);
+            margin-top: 25px;
+        }
+        .coffee-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(151, 201, 61, 0.6);
+            background: #8BC234;
+            color: var(--color-white);
+        }
+        
+        @media (max-width: 768px) {
+            .coffee-form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .coffee-preferences {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .coffee-form-container {
+                padding: 25px;
+                margin: 0 15px;
+            }
+        }
+
+        /* === AFFILIATE FORMULÁŘ LAYOUT === */
+        .affiliate-form-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 60px; /* Větší mezera mezi textem a formulářem */
+        }
+
+        .affiliate-form-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .affiliate-form-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .affiliate-form-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Responzivní design pro mobily */
+        @media (max-width: 968px) {
+            .affiliate-form-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-top: 40px;
+            }
+            
+            /* Na mobilu bude obrázek nahoře */
+            .affiliate-form-image {
+                order: 1;
+            }
+            
+            .affiliate-form-content {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .affiliate-form-layout {
+                gap: 30px;
+                margin-top: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+   
+
+    <header class="hero section">
+        <svg class="hero-bg-circle" width="500" height="500" viewBox="0 0 500 500" fill="none"><circle cx="250" cy="250" r="250" fill="#5BA4CF"/></svg>
+        <svg class="hero-bg-dot" width="120" height="120" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="60" fill="#97C93D"/></svg>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="sub-heading">STAŇTE SE PARTNEREM BEWIT</p>
+                <h1>Vydělávejte s produkty, které mají smysl</h1>
+                <p>Bez nátlaku, bez minimálních obratů, bez skladování. Jen vy, vaše doporučení a provize až 30 % z každého prodeje. 
+                    <strong style="color: var(--color-primary); font-weight: 700;">Průměrná odměna: 480 Kč za jeden nákup.</strong></p>
+                <a href="#formular" class="btn btn-primary">Začít vydělávat</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://modopafybeslbcqjxsve.supabase.co/storage/v1/object/public/web/fot-final.png" alt="Žena cvičí jógu na pláži">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section about-us">
+           
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon" style="color: #5BA4CF;"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                    <h3>Žádné vstupní investice</h3>
+                    <p>Nemusíte vkládat vlastní peníze ani kupovat balíčky. Začnete vydělávat hned, bez rizika.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon" style="color: #97C93D;"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12c0-2.25 1.5-4.5 3.75-4.5s3.75 2.25 3.75 4.5-1.5 4.5-3.75 4.5S6.75 14.25 6.75 12zm7.5 0c0-2.25 1.5-4.5 3.75-4.5s3.75 2.25 3.75 4.5-1.5 4.5-3.75 4.5-3.75-2.25-3.75-4.5z" /></svg></div>
+                    <h3>Bez nákupních povinností</h3>
+                    <p>Není zde žádný nátlak – nemusíte prodat minimální množství produktů ani plnit obraty.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon" style="color: #5BA4CF;"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg></div>
+                    <h3>Pracujte odkudkoliv</h3>
+                    <p>Z domu, z pláže nebo z kavárny – potřebujete jen internet. Online nástroje máte zdarma.</p>
+                </div>
+            </div>
+           
+            <div class="container" style="margin-top: 80px;">
+                <h2>Etické produkty se silným brandem</h2>
+                <p class="intro-text">Nabízejte produkty, které sami používáte a kterým věříte – 100% přírodní, rostlinného původu, bez chemie. Díky našemu silnému brandu se produkty prodávají snadno, a to za konkurenceschopné ceny. Zákazníci si je mohou koupit i bez registrace, což vám otevírá dveře k širokému publiku. <strong>Naše kořeny jsou v Ostravě, náš dosah je celosvětový</strong> – nejen Evropa, ale i trhy mimo ni.</p> 
+                
+                
+                
+                <!-- CTA Tlačítko -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#formular" class="btn btn-primary">Začít vydělávat</a>
+                </div>
+               
+<!-- BĚHACÍ TEXT PO KŘIVCE (OPRAVENÁ VERZE) -->
+<div class="curved-loop-section">
+    <div class="curved-loop-wrapper">
+        <svg class="curved-loop-svg" viewBox="0 0 2880 120">
+            <defs>
+                <path id="curvedPath" d="M-200,60 Q1440,160 3080,60" fill="none"/>
+            </defs>
+            <text class="curved-loop-text">
+                <textPath href="#curvedPath" startOffset="100%">
+                    <!-- Text stačí uvést dvakrát za sebou pro plynulý přechod -->
+                    BEWIT ✦ BEZ NÁTLAKU ✦ BEZ POVINNOSTÍ ✦ JEN FÉROVÉ ODMĚNY ✦ 
+                    BEWIT ✦ BEZ NÁTLAKU ✦ BEZ POVINNOSTÍ ✦ JEN FÉROVÉ ODMĚNY ✦
+                    BEWIT ✦ BEZ NÁTLAKU ✦ BEZ POVINNOSTÍ ✦ JEN FÉROVÉ ODMĚNY ✦ 
+                    BEWIT ✦ BEZ NÁTLAKU ✦ BEZ POVINNOSTÍ ✦ JEN FÉROVÉ ODMĚNY ✦ 
+                    BEWIT ✦ BEZ NÁTLAKU ✦ BEZ POVINNOSTÍ ✦ JEN FÉROVÉ ODMĚNY ✦ 
+                    BEWIT ✦ BEZ NÁTLAKU ✦ BEZ POVINNOSTÍ ✦ JEN FÉROVÉ ODMĚNY ✦ 
+                </textPath>
+            </text>
+        </svg>
+    </div>
+</div>
+        </section>
+
+        <section class="section rewards">
+            <div class="container">
+                <h2>Systém odměn, který má smysl</h2>
+                <div class="reward-highlight">
+                    <p>Z každého prodeje přes váš unikátní odkaz <strong>získáváte až 30%</strong>. Průměrná hodnota objednávky našich zákazníků je 2 500 Kč. <strong>Zajímavé odměny od výrobce při zachování konkurenceschopných cen</strong> – produkty nejsou mnohonásobně předražené.</p>
+                    <div class="percentage"></div>
+                    
+                </div>
+
+                <div class="how-it-works-grid">
+                    <div class="how-item">
+                        <div class="icon" style="color: #97C93D;"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg></div>
+                        <h3>Nemusíte se o nic starat</h3>
+                        <p>Objednávky, platby, expedice i zákaznický support řešíme za vás. Nepotřebujete žádný fyzický salonek ani vlastní sklad.</p>
+                    </div>
+                    <div class="how-item">
+                        <div class="icon" style="color: #5BA4CF;"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg></div>
+                        <h3>Online marketing zdarma
+                        </h3>
+                        <p>K dispozici máte zdarma online marketingové nástroje, grafiku a podporu od našeho týmu. Oslovte více lidí přes internet.</p>
+                    </div>
+                    <div class="how-item">
+                        <div class="icon" style="color: #97C93D;"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div>
+                        <h3>Silný brand pomáhá růst
+                        </h3>
+                        <p>Navštivte naši firmu, projděte si výrobu a získejte důvěru pro vaše doporučení. Silný brand usnadňuje rozšiřování sítě.</p>
+                    </div>
+                </div>
+                <p class="note">Je úplně jedno, jaký prodejní kanál zákazník zvolí. Provize je vždy vaše.</p>
+            </div>
+        </section>
+
+        <!-- <section id="calculator-section">
+            <div class="wave-top">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C400,40 1040,100 1440,60 L1440,0 L0,0 Z" fill="var(--color-white)"></path></svg>
+            </div>
+            <div class="calculator-bg">
+                <div class="container">
+                    <h2 style="margin-bottom: 40px;">Spočítejte si svůj měsíční výdělek</h2>
+                    <div class="calculator-wrapper-custom">
+                        <div class="calculator-box">
+                            <p>Když tento měsíc zařídím <strong id="sales-count" style="font-weight: 600;">10</strong> prodejů:</p>
+                            <input type="range" min="1" max="200" value="10" id="sales-slider">
+                            <p>Moje provize by mohla být až:</p>
+                            <p id="reward-amount" class="reward-value">2 400 Kč</p>
+                        </div>
+                        <div class="separator-text-custom">
+                            <h3>Tvůj obsah, tvoje sítě, tvoje odměna.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wave-bottom">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C300,120 1140,0 1440,60 L1440,120 L0,120 Z" fill="var(--color-white)"></path></svg>
+            </div>
+        </section> -->
+
+        <!-- === CTA TLAČÍTKO === -->
+        <section class="section" style="padding: 30px 0; background-color: var(--color-white);">
+            <div class="container" style="text-align: center;">
+                <a href="#formular" class="btn btn-primary" style="font-size: 20px; padding: 20px 40px;">Chci začít vydělávat</a>
+            </div>
+        </section>
+
+        <!-- === ANIMOVANÝ SLOUPCOVÝ GRAF S EXPONENCIÁLNÍ KŘIVKOU === -->
+        <section class="section animated-bar-chart-section">
+            <div class="container">
+                <h2 class="bar-chart-title">Jak roste váš pasivní příjem s Bewit</h2>
+                <div class="bar-chart-wrapper">
+                    <svg id="bar-chart-svg" width="700" height="340" viewBox="0 0 700 340">
+                        <!-- Osy (pouze X) -->
+                        <g class="axes">
+                            <line x1="60" y1="300" x2="660" y2="300" stroke="#EAE3DC" stroke-width="2"/>
+                        </g>
+                        <!-- Sloupce (hnědá + zelená) -->
+                        <g class="bars">
+                            <!-- Rok 1 -->
+                            <g class="bar-group" data-year="1">
+                                <rect class="bar-brown" x="90" y="300" width="40" height="0" fill="#A67C52" rx="20"/>
+                                <rect class="bar-green" x="90" y="300" width="40" height="0" fill="#6B7A6A" rx="0"/>
+                            </g>
+                            <!-- Rok 2 -->
+                            <g class="bar-group" data-year="2">
+                                <rect class="bar-brown" x="180" y="300" width="40" height="0" fill="#A67C52" rx="20"/>
+                                <rect class="bar-green" x="180" y="300" width="40" height="0" fill="#6B7A6A" rx="0"/>
+                            </g>
+                            <!-- Rok 3 -->
+                            <g class="bar-group" data-year="3">
+                                <rect class="bar-brown" x="270" y="300" width="40" height="0" fill="#A67C52" rx="20"/>
+                                <rect class="bar-green" x="270" y="300" width="40" height="0" fill="#6B7A6A" rx="0"/>
+                            </g>
+                            <!-- Rok 4 -->
+                            <g class="bar-group" data-year="4">
+                                <rect class="bar-brown" x="360" y="300" width="40" height="0" fill="#A67C52" rx="20"/>
+                                <rect class="bar-green" x="360" y="300" width="40" height="0" fill="#6B7A6A" rx="0"/>
+                            </g>
+                            <!-- Rok 5 -->
+                            <g class="bar-group" data-year="5">
+                                <rect class="bar-brown" x="450" y="300" width="40" height="0" fill="#A67C52" rx="20"/>
+                                <rect class="bar-green" x="450" y="300" width="40" height="0" fill="#6B7A6A" rx="0"/>
+                            </g>
+                        </g>
+                        <!-- Popisky osy X -->
+                        <g class="x-labels" font-size="16" fill="#4E4E4E" font-weight="600">
+                            <text x="110" y="325" text-anchor="middle">1. rok</text>
+                            <text x="200" y="325" text-anchor="middle">2. rok</text>
+                            <text x="290" y="325" text-anchor="middle">3. rok</text>
+                            <text x="380" y="325" text-anchor="middle">4. rok</text>
+                            <text x="470" y="325" text-anchor="middle">5. rok</text>
+                        </g>
+                        <!-- Křivka a šipka (skrytá, zobrazí se po animaci sloupců) -->
+                        <g class="trend-group" style="opacity:0;">
+                            <path id="trend-curve" d="M110,300 C200,220 400,120 520,80" fill="none" stroke="#5BA4CF" stroke-width="4" marker-end="url(#arrowhead)"/>
+                            <defs>
+                                <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto" markerUnits="strokeWidth">
+                                    <polygon points="0,0 6,3 0,6 1.5,3" fill="#5BA4CF"/>
+                                </marker>
+                            </defs>
+                            <!-- Odlesk -->
+                            <rect id="trend-glint" x="110" y="25" width="30" height="12" rx="6" fill="white" fill-opacity="0.7" style="filter: blur(4px); opacity:0;"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="bar-chart-legend" style="display:flex;justify-content:center;gap:30px;margin-top:18px;">
+                    <span class="legend-brown"><span class="legend-color" style="background:#97C93D;"></span> Vaši zákazníci</span>
+                    <span class="legend-green"><span class="legend-color" style="background:#5BA4CF;"></span> Přátelé přivedeni vašimi zákazníky</span>
+                </div>
+                <div class="bar-chart-note" style="max-width:700px;margin:32px auto 0 auto;text-align:center;font-size:1.1em;color:#333333;background:#F5F5F5;padding:20px 26px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                    <strong>Naše produkty mají výjimečnou schopnost šířit se samy díky své kvalitě 
+    a nadšení zákazníků. Nepoužíváme žádná chemická syntetická aditiva. 100% příroda. 0% aditiv z ropy. </strong><br>
+    Naše produkty si získávají oblibu samy svou kvalitou a zkušenostmi zákazníků.
+
+    Často se stává, že lidé sdílí své pozitivní dojmy se svými blízkými. Pokud někdo z jejich okolí na základě tohoto doporučení nakoupí, náš affiliate program vám z toho přizná odměnu – automaticky a transparentně.
+    Silným zázemím je také naše Facebook komunita s více než 18 000 členy, kde lidé sdílí tipy, zkušenosti i inspiraci. Díky tomu si mnoho našich partnerů postupně vybudovalo stabilní příjem, aniž by museli zákazníky přemlouvat. <strong> Stačí, když si lidé produkty oblíbí – a komunita se o přirozené šíření postará sama.</strong>
+     
+                </div>
+            </div>
+        </section>
+        <!-- === KONEC SLOUPCOVÉHO GRAFU === -->
+
+        <!-- === NOVÝ BLOK: NEJSME MLM, ALE PARTNERSTVÍ === -->
+        <section class="section not-mlm-section">
+            <div class="container">
+                <div>
+                    <h2><br>Partnerství s BEWIT – jinak než ostatní</h2>
+                    <ul>
+                        <li><span class="icon">✓</span><span><strong>Žádné vstupní balíčky:</strong> Nemusíte nakupovat produkty, které nepotřebujete. Můžete začít úplně zdarma.</span></li>
+                        <li><span class="icon">✓</span><span><strong>Bez tlaku na obraty:</strong> Nevyžadujeme minimální prodeje. Nabízejte jen to, co sami chcete a kdy chcete.</span></li>
+                        <li><span class="icon">✓</span><span><strong>Férové ceny pro zákazníky:</strong> Naše produkty nejsou uměle předražené – zajímavé odměny při konkurenceschopných cenách.</span></li>
+                        <li><span class="icon">✓</span><span><strong>Prodej i bez registrace:</strong> Vaši zákazníci si mohou koupit kdykoli bez nutnosti registrace – žádné komplikace.</span></li>
+                        <li><span class="icon">✓</span><span><strong>Nejsme pyramida ani MLM:</strong> Vyděláváte přímo za své doporučení, ne za budování složitých struktur.</span></li>
+                        <li><span class="icon">✓</span><span><strong>Celosvětový potenciál:</strong> Silný brand s dosahem do celého světa – nejen Evropa, ale i trhy mimo ni.</span></li>
+                    </ul>
+                </div>
+                <div class="svg-container">
+                    <svg width="320" height="320" viewBox="0 0 320 320" fill="none">
+                        <circle cx="160" cy="160" r="150" fill="#5BA4CF" fill-opacity="0.4"/>
+                        <circle cx="160" cy="160" r="110" fill="#97C93D" fill-opacity="0.35"/>
+                        <g>
+                            <rect x="80" y="120" width="160" height="80" rx="24" fill="#fff" stroke="#97C93D" stroke-width="6"/>
+                            <path d="M120 160h80" stroke="#5BA4CF" stroke-width="6" stroke-linecap="round"/>
+                            <circle cx="120" cy="160" r="14" fill="#97C93D"/>
+                            <circle cx="200" cy="160" r="14" fill="#5BA4CF"/>
+                        </g>
+                        <text x="50%" y="90%" text-anchor="middle" fill="#2C5F2D" font-size="18" font-family="Open Sans, sans-serif" font-weight="700">Férové partnerství</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <!-- === KONEC NOVÉHO BLOKU === -->
+
+        <!-- === BLOK: POZVÁNÍ NA KÁVU === -->
+        <section class="section coffee-invitation-section">
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="coffee-video-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="http://bewit.love/images/funnel/funnel_short_v1.mp4" type="video/mp4">
+                        Váš prohlížeč nepodporuje video element.
+                    </video>
+                </div>
+                <h2>Zveme tě na kávu!</h2>
+                <p class="intro-text">
+                    Rádi tě osobně přivítáme a provedeme tě zákulisím BEWIT – od výroby a výzkumu až po náš expediční sklad. Díky tomu získáš autentickou představu o tom, co propaguješ. A pokud chceš, můžeš si rovnou natočit i své první reels video, které dodá tvým followerům inspiraci přímo z místa dění.
+                </p>
+                <p class="intro-text">
+                    <strong>Najdeš nás v:</strong><br>
+                    <strong>Slezské Ostravě</strong> – sídlo společnosti<br>
+                    <strong>Těrlicku</strong> – výroba<br>
+                    <strong>Ostravě - Hrabové</strong> – expediční sklad
+                </p>
+                
+                <div class="coffee-form-container">
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; text-align: center; border: 2px solid rgba(255,255,255,0.2);">
+                        <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--color-white);">Krok 1/2 – Základní údaje</p>
+                    </div>
+                    <form id="coffee-invitation-form" action="#" method="POST">
+                        <div class="coffee-form-row">
+                            <div class="coffee-form-group">
+                                <label for="firstName">Jméno *</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Vaše jméno" required>
+                            </div>
+                            <div class="coffee-form-group">
+                                <label for="lastName">Příjmení *</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Vaše příjmení" required>
+                            </div>
+                        </div>
+                        
+                        <div class="coffee-form-row">
+                            <div class="coffee-form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+                            </div>
+                            <div class="coffee-form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789" required>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Zaškrtávací políčka se souhlasy -->
+                        <div id="coffee-consent-container" style="margin: 20px 0;">
+                            <div class="consent-checkbox-item" style="margin-bottom: 15px;">
+                                <input type="checkbox" id="coffee-privacy-consent" name="privacy-consent" required style="margin-right: 10px;">
+                                <label for="coffee-privacy-consent" style="font-size: 14px; color: white; line-height: 1.4;">
+                                    Souhlasím se <a href="https://bewit.love/zasady-zpracovani-osobnich-udaju/" target="_blank" style="color: var(--color-accent); text-decoration: underline;">zásadami zpracování osobních údajů</a> *
+                                </label>
+                            </div>
+                            <div class="consent-checkbox-item">
+                                <input type="checkbox" id="coffee-marketing-consent" name="marketing-consent" style="margin-right: 10px;">
+                                <label for="coffee-marketing-consent" style="font-size: 14px; color: white; line-height: 1.4;">
+                                    Souhlasím se zpracováním osobních údajů pro marketingové účely
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="coffee-submit-btn">Kontaktujte mě</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- === KONEC BLOKU POZVÁNÍ NA KÁVU === -->
+
+        <section class="section testimonial-section">
+            <div class="container">
+                <h2>Co říkají naši partneři?</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <!-- SADA 1: 4 ORIGINÁLNÍ KARTY -->
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Z"/></svg></div>
+                        <p class="quote">"Produkty Bewit doporučuji svým klientům, protože jim věřím. Provize je pro mě skvělý bonus, který mi snadno zaplatí nájem ordinace."</p>
+                        <div class="author-info">
+                            <div>
+                                <div class="author">Jana, Terapeutka</div>
+                                <div class="earnings">prům. 18 000 Kč / měsíc</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Z"/></svg></div>
+                        <p class="quote">"Napsal jsem dva články o esenciálních olejích a od té doby mi chodí peníze každý měsíc. Je to nejjednodušší affiliate program, ve kterém jsem."</p>
+                        <div class="author-info">
+                            <div>
+                                <div class="author">Tomáš, Blogger</div>
+                                <div class="earnings">prům. 25 000 Kč / měsíc</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                         <div class="quote-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Z"/></svg></div>
+                        <p class="quote">"Jako maminka na mateřské jsem hledala přivýdělek, který by mě bavil. Doporučuji kamarádkám a ony zase dál. Je to skvělé."</p>
+                        <div class="author-info">
+                            <div>
+                                <div class="author">Klára, Maminka na MD</div>
+                                <div class="earnings">prům. 9 500 Kč / měsíc</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                         <div class="quote-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Z"/></svg></div>
+                        <p class="quote">"Nejdřív jsem byl skeptický, ale teď lituji, že jsem nezačal dřív. Systém je transparentní a podpora Bewit je opravdu lidská a ochotná."</p>
+                        <div class="author-info">
+                            <div>
+                                <div class="author">Petr, IT specialista</div>
+                                <div class="earnings">prům. 32 000 Kč / měsíc</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SADA 2: 4 KARTY JAKO KOPIE PRO PLYNULOU ANIMACI -->
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Z"/></svg></div>
+                        <p class="quote">"Produkty Bewit doporučuji svým klientům, protože jim věřím. Provize je pro mě skvělý bonus, který mi snadno zaplatí nájem ordinace."</p>
+                        <div class="author-info">
+                            <div>
+                                <div class="author">Jana, Terapeutka</div>
+                                <div class="earnings">prům. 18 000 Kč / měsíc</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Z"/></svg></div>
+                        <p class="quote">"Produkty Bewit doporučuji svým klientům, protože jim věřím. Provize je pro mě skvělý bonus, který mi snadno zaplatí nájem ordinace."</p>
+                        <div class="author-info">
+                            <div>
+                                <div class="author">Tomáš, Blogger</div>
+                                <div class="earnings">prům. 25 000 Kč / měsíc</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                         <div class="quote-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Z"/></svg></div>
+                        <p class="quote">"Jako maminka na mateřské jsem hledala přivýdělek, který by mě bavil. Doporučuji kamarádkám a ony zase dál. Je to skvělé."</p>
+                        <div class="author-info">
+                            <div>
+                                <div class="author">Klára, Maminka na MD</div>
+                                <div class="earnings">prům. 9 500 Kč / měsíc</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                         <div class="quote-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-1.005.144-.302.341-.536.592-.704.251-.168.559-.252.923-.252.336 0 .614.074.836.222.223.148.336.335.336.562 0 .227-.11.416-.33.558a1.03 1.03 0 0 1-.498.158 1.03 1.03 0 0 1-.498-.158l-.002-.002c-.146-.093-.22-.21-.22-.353 0-.065.015-.123.046-.175.032-.052.08-.095.144-.128.065-.032.137-.048.216-.048.196 0 .358.07.486.21.128.14.192.312.192.516 0 .4-.15.758-.45 1.076-.302.318-.724.529-1.266.634-.54.106-1.033.253-1.478.442a3.12 3.12 0 0 0-.979.72c-.264.282-.46.63-.589 1.043-.13.413-.194.87-.194 1.374V11c0 .552.448 1 1 1h2Z"/></svg></div>
+                        <p class="quote">"Nejdřív jsem byl skeptický, ale teď lituji, že jsem nezačal dřív. Systém je transparentní a podpora Bewit je opravdu lidská a ochotná."</p>
+                        <div class="author-info">
+                            <div>
+                                <div class="author">Petr, IT specialista</div>
+                                <div class="earnings">prům. 32 000 Kč / měsíc</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section success-rate">
+            <svg class="success-bg-circle" width="220" height="220" viewBox="0 0 220 220" style="left:-70px; top:10px;" fill="none"><circle cx="110" cy="110" r="110" fill="#5BA4CF"/></svg>
+            <svg class="success-bg-circle" width="120" height="120" viewBox="0 0 120 120" style="right:-50px; bottom:-30px; left:auto; top:auto; position:absolute;" fill="none"><circle cx="60" cy="60" r="60" fill="#5BA4CF"/></svg>
+          
+            <div class="container">
+                <h2>Férový přístup. Reálné výsledky.</h2>
+                <div class="comparison-flex">
+                    <div class="comparison-item comparison-item-highlight">
+                        <div class="value value-highlight">30%</div>
+                        <p>Našich partnerů si vydělává přes <strong style="color:var(--color-primary); font-weight:700;">50 000,-</strong> měsíčně</p>
+                    </div>
+                    <div class="divider-vertical"></div>
+                    <div class="comparison-item comparison-item-grey">
+                        <div class="value value-grey">13%</div>
+                        <p>Dosáhne v klasických strukturách síťového prodeje výdělek vyšší než 30 000,-</p>
+                    </div>
+                </div>
+                <p class="outro">BEWIT TRUE AFFILIATE – férový affiliate systém bez nátlaku, bez povinností, s reálnými výsledky. 
+                    Pomáháme vám růst – nejen v příjmech, ale i v autenticitě vašeho obsahu.
+                    
+                </p>
+            </div>
+        </section>
+
+        <section class="section world-map">
+            <div class="container">
+                <h2>Podnikejte bez hranic</h2>
+                <p>Podnikejte odkudkoli – náš systém vám otevře cestu k zákazníkům po celém světě.</p>
+                <img src="https://modopafybeslbcqjxsve.supabase.co/storage/v1/object/public/web/minimal-world-map-isolated-white-background-with-shadow.png" alt="Mapa světa s vyznačenými zeměmi, kde Bewit působí">
+                <!-- <img src="https://modopafybeslbcqjxsve.supabase.co/storage/v1/object/public/web/Chat-GPT-Image-Jul-11-2025-11-26-40-AM-removebg-preview.png" alt="Mapa světa s vyznačenými zeměmi, kde Bewit působí"> -->
+            </div>
+        </section>
+
+        <section class="section summary" style="background-color: var(--color-white);">
+            <div class="container">
+                <h2>Proč je BEWIT jiné:</h2>
+                <ul>
+                    <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div> Žádné vstupní investice ani nákupní povinnosti – začínáte bez rizika</li>
+                    <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div> Nabízejte i online – oslovte více lidí přes internet s našimi nástroji zdarma</li>
+                    <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div> Etické produkty bez chemie, 100% rostlinného původu – mohu nabízet to, co sám používám</li>
+                    <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div> Nemusíte se o nic starat – bez fyzického salonku, bez skladu, bez starostí</li>
+                    <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div> Pracujte odkudkoli – z domu nebo z pláže, jak se vám to hodí</li>
+                    <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div> Zákazníci si mohou koupit i bez registrace – žádné komplikace</li>
+                    <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div> Silný brand s celosvětovým záběrem – pomáhá při rozšiřování sítě</li>
+                </ul>
+                <div class="cta-wrapper">
+                    <a href="#formular" class="btn btn-primary">Ano, chci začít vydělávat</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-form" id="formular">
+            <div class="container">
+                <h2>Začni budovat svůj úspěšný byznys s BEWIT – registruj se ještě dnes a získej e-book zdarma, který ti ukáže konkrétní kroky.</h2>
+                <p class="intro-text">Objev, jak si vybudovat úspěšný byznys s BEWITem – krok za krokem
+                    Stáhni si zdarma e-book, ve kterém najdeš krok za krokem vysvětlený systém, jak pracovat s BEWITem, získávat stabilní příjem a vybudovat si vlastní rentu.</p>
+                
+                <div class="affiliate-form-layout">
+                    <div class="affiliate-form-image">
+                        <!-- <img src="https://i.postimg.cc/0Nxp56S5/20250711-1237-Moderni-Kniha-Mockup-simple-compose-01jzwgwr4afyzvdb5qdd9xc4y4.png" alt="Moderní kniha - E-book"> -->
+                        <img src="https://modopafybeslbcqjxsve.supabase.co/storage/v1/object/public/web/2025-09-12_10-32-45-removebg-preview.png" alt="Moderní kniha - E-book">
+                    </div>
+                    
+                    <div class="affiliate-form-content">
+                        <div class="coffee-form-container">
+                            <div style="background: rgba(255,255,255,0.1); padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; text-align: center; border: 2px solid rgba(255,255,255,0.2);">
+                                <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--color-white);">Krok 1/2 – Základní údaje</p>
+                            </div>
+                            <form action="#" method="POST" id="affiliate-form">
+                                <div class="coffee-form-row">
+                                    <div class="coffee-form-group">
+                                        <label for="first-name">Jméno *</label>
+                                        <input type="text" id="first-name" name="first-name" placeholder="Vaše jméno" required>
+                                    </div>
+                                    <div class="coffee-form-group">
+                                        <label for="last-name">Příjmení *</label>
+                                        <input type="text" id="last-name" name="last-name" placeholder="Vaše příjmení" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="coffee-form-row">
+                                    <div class="coffee-form-group">
+                                        <label for="email">E-mail *</label>
+                                        <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+                                    </div>
+                                    <div class="coffee-form-group">
+                                        <label for="phone">Telefon *</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789" required>
+                                    </div>
+                                </div>
+                                
+                                <!-- Zaškrtávací políčka se souhlasy -->
+                                <div id="affiliate-consent-container" style="margin: 20px 0;">
+                                    <div class="consent-checkbox-item" style="margin-bottom: 15px;">
+                                        <input type="checkbox" id="affiliate-privacy-consent" name="privacy-consent" required style="margin-right: 10px;">
+                                        <label for="affiliate-privacy-consent" style="font-size: 14px; color: white; line-height: 1.4;">
+                                            Souhlasím se <a href="https://bewit.love/zasady-zpracovani-osobnich-udaju/" target="_blank" style="color: var(--color-accent); text-decoration: underline;">zásadami zpracování osobních údajů</a> *
+                                        </label>
+                                    </div>
+                                    <div class="consent-checkbox-item">
+                                        <input type="checkbox" id="affiliate-marketing-consent" name="marketing-consent" style="margin-right: 10px;">
+                                        <label for="affiliate-marketing-consent" style="font-size: 14px; color: white; line-height: 1.4;">
+                                            Souhlasím se zpracováním osobních údajů pro marketingové účely
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="coffee-submit-btn">Začít s affiliate programem</button>
+                            </form>
+                            
+                            <!-- <p class="bonus-text"><strong>BONUS:</strong> Jako dárek vám pošleme náš E-book "Jak Bewit pomůže rozjet váš internetový obchod" plný tipů a triků.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq">
+            <div class="container">
+                <h2>Máte otázky? Máme odpovědi.</h2>
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>Je BEWIT multi-level marketing nebo pyramida?<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+                        <div class="answer">
+                            <p><strong>Ne, nejsme MLM ani pyramida.</strong> BEWIT je klasický affiliate program s jednoduchým principem: vyděláváte provizi za prodeje, které přijdou díky vašim doporučením. Nevyžadujeme žádné vstupní balíčky, nákupní povinnosti ani budování složitých struktur pod sebou.</p>
+                            <p><strong>Hlavní rozdíly oproti MLM:</strong></p>
+                            <ul style="list-style: disc; padding-left: 25px; margin-top: 10px;">
+                                <li>Nemusíte nic kupovat, abyste mohli začít vydělávat</li>
+                                <li>Žádné minimální obraty ani měsíční nákupy</li>
+                                <li>Produkty nejsou uměle předražené – férové ceny pro zákazníky</li>
+                                <li>Zákazníci si mohou koupit i bez registrace</li>
+                                <li>Vyděláváte za skutečné prodeje, ne za nábor dalších prodejců</li>
+                            </ul>
+                            <p style="margin-top: 10px;">Náš model je transparentní a férový – pomáháme vám vydělávat doporučováním kvalitních produktů, které máte rádi.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Opravdu neplatím žádné poplatky?<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+                        <div class="answer">
+                            <p>Ano, je to tak. Partnerství je 100% zdarma. Neexistují žádné skryté poplatky za registraci, vedení účtu ani nic podobného. Není potřeba vkládat vlastní peníze. Vydělávat můžete, i když u nás nikdy nic nenakoupíte.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Musím plnit minimální obraty nebo prodávat určité množství?<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+                        <div class="answer">
+                            <p>Ne! Není zde žádný nátlak – nemusíte prodat minimální množství produktů ani plnit měsíční obraty. Nabízejte produkty jen tehdy, když to má smysl pro vás i vaše zákazníky. Žádné povinnosti, jen svoboda.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Musím mít živnostenský list?<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+                        <div class="answer">
+                            <p>Pro začátek a vyzkoušení systému nepotřebujete nic. Pokud vaše odměny překročí zákonný limit pro příležitostný příjem, je třeba si příjmy danit v souladu s platnou legislativou. S tím vám rádi poradíme.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Kdy a jak mi budete posílat odměny?<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+                        <div class="answer">
+                            <p>Odměny vyplácíme pravidelně každý měsíc na váš bankovní účet, jakmile dosáhnete minimální částky pro výplatu (např. 500 Kč). Vše přehledně uvidíte ve své online kanceláři.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Mohu pracovat odkudkoliv a nabízet produkty online?<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+                        <div class="answer">
+                            <p>Samozřejmě! Můžete pracovat odkudkoliv – z domu, z pláže nebo z kavárny. Potřebujete jen internet. K dispozici máte zdarma online marketingové nástroje, díky kterým můžete oslovit více lidí přes sociální sítě, blog nebo e-mail.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Jakou podporu od vás dostanu?<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+                        <div class="answer">
+                            <p>Získáte přístup do partnerské sekce s marketingovými materiály (bannery, fotky, texty). K dispozici jsou vám také online nástroje zdarma a naše partnerská podpora na telefonu a e-mailu, která vám ráda se vším pomůže.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // Kalkulačka - pouze pokud existují elementy
+        const salesSlider = document.getElementById('sales-slider');
+        const salesCount = document.getElementById('sales-count');
+        const rewardAmount = document.getElementById('reward-amount');
+        
+        if (salesSlider && salesCount && rewardAmount) {
+            const rewardPerSale = 240;
+
+            const currencyFormatter = new Intl.NumberFormat('cs-CZ', {
+                style: 'currency',
+                currency: 'CZK',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            });
+            
+            const numberFormatter = new Intl.NumberFormat('cs-CZ');
+
+            function updateSalesReward() {
+                const sales = parseInt(salesSlider.value);
+                const reward = sales * rewardPerSale;
+                salesCount.innerText = numberFormatter.format(sales);
+                rewardAmount.innerText = currencyFormatter.format(reward);
+            }
+
+            salesSlider.addEventListener('input', updateSalesReward);
+
+            document.addEventListener('DOMContentLoaded', () => {
+                updateSalesReward();
+            });
+        }
+
+        // === PROCENTA ZŮSTÁVAJÍ FIXNÍ NA 30% ===
+        // Žádná animace procent - zůstává na pevných 30%
+
+      // === ANIMACE BĚHACÍHO TEXTU PO KŘIVCE ===
+(function() {
+  const textPath = document.querySelector('textPath');
+  if (!textPath) return;
+  
+  let offset = 100;
+  const speed = 0.15;
+  
+  function animate() {
+    offset -= speed;
+    if (offset <= -100) offset = 100;
+    textPath.setAttribute('startOffset', offset + '%');
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+})();
+
+// === ANIMACE SLOUPCOVÉHO GRAFU S EXPONENCIÁLNÍ KŘIVKOU ===
+(function() {
+    // Data pro sloupce: přímý prodej (brown) roste, zelený (1. linie) se přidává postupně
+    const barData = [
+        { brown: 18, green: 3 },    // 1. rok: jen přímý prodej
+        { brown: 28, green: 6 },    // 2. rok: malý podíl 1. linie
+        { brown: 38, green: 12 },    // 3. rok: 1. linie roste
+        { brown: 48, green: 22 },   // 4. rok: 1. linie výrazněji
+        { brown: 60, green: 40 }    // 5. rok: 1. linie tvoří velkou část
+    ];
+    // SVG rozměry a osa Y
+    const chartHeight = 280; // výška osy Y (od y=20 do y=300)
+    const yBase = 300; // y=300 je základna
+    // Najdi SVG a sloupce
+    const svg = document.getElementById('bar-chart-svg');
+    if (!svg) return;
+    const barGroups = svg.querySelectorAll('.bar-group');
+    const trendGroup = svg.querySelector('.trend-group');
+    const trendCurve = svg.querySelector('#trend-curve');
+    const trendGlint = svg.querySelector('#trend-glint');
+
+    let animated = false;
+    // Pomocná funkce pro animaci jednoho sloupce
+    function animateBar(barBrown, barGreen, brownVal, greenVal, duration, cb) {
+        const total = brownVal + greenVal;
+        const maxBarHeight = (total / 100) * chartHeight;
+        const brownHeight = (brownVal / 100) * chartHeight;
+        const greenHeight = (greenVal / 100) * chartHeight;
+        let start = null;
+        function step(ts) {
+            if (!start) start = ts;
+            const progress = Math.min((ts - start) / duration, 1);
+            // Animace odspodu nahoru
+            const currBrown = brownHeight * progress;
+            const currGreen = greenHeight * progress;
+            // Hnědý sloupec (spodní část, zaoblený horní okraj pouze pokud není zelený sloupec)
+            barBrown.setAttribute('height', currBrown + (currGreen > 0 ? 0 : currGreen));
+            barBrown.setAttribute('y', yBase - currBrown - currGreen);
+            barBrown.setAttribute('rx', (currGreen === 0 && currBrown > 0) ? 20 : 0);
+            // Zelený sloupec (horní část, ostré spojení dole, zaoblený horní okraj nikdy)
+            barGreen.setAttribute('height', currGreen);
+            barGreen.setAttribute('y', yBase - currGreen);
+            barGreen.setAttribute('rx', 0);
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                // Nastav finální hodnoty
+                barBrown.setAttribute('height', brownHeight);
+                barBrown.setAttribute('y', yBase - brownHeight - greenHeight);
+                barBrown.setAttribute('rx', greenHeight === 0 && brownHeight > 0 ? 20 : 0);
+                barGreen.setAttribute('height', greenHeight);
+                barGreen.setAttribute('y', yBase - greenHeight);
+                barGreen.setAttribute('rx', 0);
+                if (cb) cb();
+            }
+        }
+        requestAnimationFrame(step);
+    }
+    // Animace všech sloupců sekvenčně
+    function animateBarsSequentially(i = 0) {
+        if (i >= barGroups.length) {
+            // Po sloupcích animuj křivku
+            animateTrendCurve();
+            return;
+        }
+        const group = barGroups[i];
+        const barBrown = group.querySelector('.bar-brown');
+        const barGreen = group.querySelector('.bar-green');
+        const { brown, green } = barData[i];
+        animateBar(barBrown, barGreen, brown, green, 600, () => {
+            setTimeout(() => animateBarsSequentially(i + 1), 120);
+        });
+    }
+    // Animace křivky a šipky
+    function animateTrendCurve() {
+        if (!trendGroup || !trendCurve) return;
+        trendGroup.style.opacity = 1;
+        // Křivka se "kreslí" zleva doprava
+        const pathLength = trendCurve.getTotalLength();
+        trendCurve.style.strokeDasharray = pathLength;
+        trendCurve.style.strokeDashoffset = pathLength;
+        let start = null;
+        function step(ts) {
+            if (!start) start = ts;
+            const progress = Math.min((ts - start) / 900, 1);
+            trendCurve.style.strokeDashoffset = pathLength * (1 - progress);
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                trendCurve.style.strokeDashoffset = 0;
+                animateGlint();
+            }
+        }
+        requestAnimationFrame(step);
+    }
+    // Odlesk po křivce (infinite loop)
+    function animateGlint() {
+        if (!trendCurve || !trendGlint) return;
+        trendGlint.style.opacity = 1;
+        const path = trendCurve;
+        const glintLength = 30; // délka odlesku
+        const duration = 1800;
+        function loopGlint() {
+            let start = null;
+            function step(ts) {
+                if (!start) start = ts;
+                const progress = ((ts - start) % duration) / duration;
+                // Pohyb po křivce
+                const total = path.getTotalLength();
+                const pos = total * progress;
+                const pt = path.getPointAtLength(pos);
+                // Pozice a rotace odlesku
+                trendGlint.setAttribute('x', pt.x - glintLength / 2);
+                trendGlint.setAttribute('y', pt.y - 6);
+                // Rotace podle směru křivky
+                if (pos + 1 < total) {
+                    const pt2 = path.getPointAtLength(pos + 1);
+                    const angle = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI;
+                    trendGlint.setAttribute('transform', `rotate(${angle} ${pt.x} ${pt.y})`);
+                }
+                requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+        loopGlint();
+    }
+    // Spuštění animace při scrollu na graf
+    function onScroll() {
+        if (animated) return;
+        const rect = svg.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.7 && rect.bottom > 0) {
+            animated = true;
+            animateBarsSequentially();
+            window.removeEventListener('scroll', onScroll);
+        }
+    }
+    window.addEventListener('scroll', onScroll);
+    // Pro případ, že je graf už vidět při načtení
+    setTimeout(onScroll, 400);
+})();
+
+// === SYSTÉM GENEROVÁNÍ ID ZÁKAZNÍKA ===
+(function() {
+    // ===========================================
+    // GENEROVÁNÍ A SPRÁVA ID ZÁKAZNÍKA
+    // ===========================================
+    
+    // Generování unikátního ID zákazníka
+    function generateCustomerId() {
+        // Kombinace timestamp a náhodného čísla pro jedinečnost
+        const timestamp = Date.now().toString(36);
+        const random = Math.random().toString(36).substr(2, 9);
+        return `customer_${timestamp}_${random}`;
+    }
+    
+    // Získání nebo vytvoření ID zákazníka
+    function getOrCreateCustomerId() {
+        let customerId = localStorage.getItem('bewitCustomerId');
+        
+        if (!customerId) {
+            customerId = generateCustomerId();
+            localStorage.setItem('bewitCustomerId', customerId);
+            console.log('Nové ID zákazníka vygenerováno:', customerId);
+        } else {
+            console.log('Existující ID zákazníka načteno:', customerId);
+        }
+        
+        return customerId;
+    }
+    
+    // Přidání event listenerů na všechna akční tlačítka (kromě affiliate tlačítka)
+    function setupCustomerIdTracking() {
+        // Najdeme všechna akční tlačítka kromě affiliate tlačítka (to má vlastní webhook handler)
+        const actionButtons = document.querySelectorAll('a[href="#formular"], .btn-primary[href="#formular"], .coffee-submit-btn');
+        
+        actionButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Generujeme nebo získáme ID zákazníka při každém kliknutí
+                const customerId = getOrCreateCustomerId();
+                
+                console.log('Kliknuto na akční tlačítko, ID zákazníka:', customerId);
+            });
+        });
+    }
+    
+    // Globální funkce pro získání ID zákazníka (pro použití v dalších skriptech)
+    window.getBewitCustomerId = getOrCreateCustomerId;
+    
+    // Inicializace po načtení DOM
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inicializujeme ID zákazníka hned při načtení stránky
+        getOrCreateCustomerId();
+        
+        // Nastavíme tracking pro tlačítka
+        setupCustomerIdTracking();
+    });
+})();
+
+// === AFFILIATE PROGRAM REGISTRATION WEBHOOK ===
+(function() {
+    // ===========================================
+    // KONFIGURACE WEBHOOKU PRO AFFILIATE REGISTRACI
+    // ===========================================
+    const AFFILIATE_WEBHOOK_CONFIG = {
+        // URL webhooku pro affiliate registrace
+        url: 'https://n8n.srv980546.hstgr.cloud/webhook-test/d8c556b6-eb98-4227-8204-6b2110675513', // Webhook pro affiliate program
+        
+        // Tagy pro affiliate registraci
+        tags: [
+            'Affiliate', // Hlavní tag stejný jako u kavy
+            'register_universal'  // Subtag pro registraci
+        ].filter(tag => tag.length > 0),
+        
+        // Metoda HTTP
+        method: 'POST',
+        
+        // Hlavičky
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    };
+
+    // Funkce pro formátování data
+    function formatClickDate() {
+        const now = new Date();
+        const day = now.getDate();
+        const month = now.getMonth() + 1;
+        const year = now.getFullYear();
+        return `${day}.${month}.${year}`;
+    }
+
+    // Inicializace po načtení DOM
+    function initAffiliateForm() {
+        // Nalezení formuláře "Začít s affiliate programem"
+        const affiliateForm = document.querySelector('#affiliate-form');
+        
+        console.log('🔍 Hledám affiliate formulář...', affiliateForm ? 'NALEZEN' : 'NENALEZEN');
+        
+        if (affiliateForm) {
+            console.log('✅ Affiliate formulář nalezen, přidávám event listener');
+            affiliateForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Zastavíme defaultní chování
+                
+                // Získáme data z formuláře
+                const formData = new FormData(this);
+                const firstName = formData.get('first-name');
+                const lastName = formData.get('last-name');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const wantEbook = formData.get('want-ebook');
+                const privacyConsent = formData.get('privacy-consent');
+                const marketingConsent = formData.get('marketing-consent');
+                
+                // Validace formuláře
+                if (!firstName || !lastName || !email || !phone || !privacyConsent) {
+                    alert('Prosím vyplňte všechna povinná pole a souhlaste se zpracováním osobních údajů.');
+                    return;
+                }
+                
+                // Získáme ID zákazníka
+                const customerId = window.getBewitCustomerId ? window.getBewitCustomerId() : null;
+                
+                // Příprava dat pro webhook
+                const webhookData = {
+                    // ID zákazníka
+                    customerId: customerId,
+                    
+                    // Data z formuláře
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    wantEbook: !!wantEbook,
+                    
+                    // Souhlasy
+                    privacyConsent: !!privacyConsent,
+                    marketingConsent: !!marketingConsent,
+                    
+                    // Datum registrace
+                    registrationDate: formatClickDate(),
+                    
+                    // Tagy
+                    tags: AFFILIATE_WEBHOOK_CONFIG.tags,
+                    
+                    // Metadata
+                    timestamp: new Date().toISOString(),
+                    source: 'affiliate_registration_form',
+                    action: 'affiliate_program_registration',
+                    url: window.location.href,
+                    userAgent: navigator.userAgent
+                };
+                
+                console.log('🚀 Odesílám affiliate registraci na webhook:', AFFILIATE_WEBHOOK_CONFIG.url);
+                console.log('📦 Data:', webhookData);
+                
+                // Odeslání na webhook
+                fetch(AFFILIATE_WEBHOOK_CONFIG.url, {
+                    method: AFFILIATE_WEBHOOK_CONFIG.method,
+                    headers: AFFILIATE_WEBHOOK_CONFIG.headers,
+                    body: JSON.stringify(webhookData)
+                })
+                .then(response => {
+                    console.log('✅ Affiliate webhook response status:', response.status);
+                    console.log('📊 Affiliate webhook response:', response);
+                    
+                    if (response.ok) {
+                        console.log('✅ Webhook úspěšně odeslán');
+                    } else {
+                        console.warn('⚠️ Webhook response není OK:', response.statusText);
+                    }
+                    
+                    // Pokračujeme na děkovnou stránku s ID zákazníka
+                    const url = new URL('thank-you.html', window.location.href);
+                    if (customerId) {
+                        url.searchParams.set('customerId', customerId);
+                    }
+                    window.location.href = url.toString();
+                })
+                .catch(error => {
+                    console.error('❌ Chyba při odesílání affiliate webhooku:', error);
+                    console.error('🔍 Detaily chyby:', error.message);
+                    
+                    // I při chybě pokračujeme na děkovnou stránku
+                    const url = new URL('thank-you.html', window.location.href);
+                    if (customerId) {
+                        url.searchParams.set('customerId', customerId);
+                    }
+                    window.location.href = url.toString();
+                });
+            });
+        } else {
+            console.warn('⚠️ Affiliate formulář nebyl nalezen!');
+        }
+    }
+    
+    // Spuštění inicializace po načtení DOM
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAffiliateForm);
+    } else {
+        initAffiliateForm();
+    }
+})();
+
+// === COFFEE INVITATION FORM ===
+(function() {
+    // ===========================================
+    // KONFIGURACE WEBHOOKU A TAGŮ
+    // ===========================================
+    const WEBHOOK_CONFIG = {
+        // URL webhooku pro coffee formulář
+        url: 'https://n8n.srv980546.hstgr.cloud/webhook-test/597fec26-b6b4-4f43-a931-672302d334ee', // Coffee webhook
+        
+        // Tagy pro kategorizaci - lze přidat více tagů
+        tags: [
+            'Affiliate', // TAG 1: Přidejte první tag (např. "kava-ostrava")
+            'contact_demand'  // TAG 2: Přidejte druhý tag (např. "affiliate-lead")
+        ].filter(tag => tag.length > 0), // Odfiltruje prázdné tagy
+        
+        // Metoda HTTP (obvykle POST)
+        method: 'POST',
+        
+        // Dodatečné hlavičky (pokud je potřeba)
+        headers: {
+            'Content-Type': 'application/json',
+            // 'Authorization': 'Bearer YOUR_TOKEN', // Pokud je potřeba autorizace
+        }
+    };
+    // ===========================================
+    // KONEC KONFIGURACE - ZDE NÁSLEDUJE LOGIKA FORMULÁŘE
+    // ===========================================
+    
+    const form = document.getElementById('coffee-invitation-form');
+    const submitBtn = form?.querySelector('.coffee-submit-btn');
+    
+    if (!form || !submitBtn) return;
+    
+    // Validace e-mailu
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    // Validace telefonu (nyní povinné pole)
+    function isValidPhone(phone) {
+        if (!phone.trim()) return false; // Povinné pole
+        const phoneRegex = /^(\+420)?\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{3}$/;
+        return phoneRegex.test(phone.replace(/\s/g, ''));
+    }
+    
+    // Zobrazení chybové hlášky
+    function showError(input, message) {
+        // Odstraň předchozí chybovou hlášku
+        const existingError = input.parentNode.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+        
+        // Přidej novou chybovou hlášku
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.cssText = 'color: #ff6b6b; font-size: 14px; margin-top: 5px; font-weight: 500;';
+        errorDiv.textContent = message;
+        input.parentNode.appendChild(errorDiv);
+        
+        // Zvýrazni problematické pole
+        input.style.borderColor = '#ff6b6b';
+        input.style.boxShadow = '0 0 0 3px rgba(255, 107, 107, 0.3)';
+    }
+    
+    // Odstranění chybové hlášky
+    function clearError(input) {
+        const errorDiv = input.parentNode.querySelector('.error-message');
+        if (errorDiv) {
+            errorDiv.remove();
+        }
+        input.style.borderColor = '';
+        input.style.boxShadow = '';
+    }
+    
+    // Validace jednotlivých polí při změně
+    form.addEventListener('input', function(e) {
+        const target = e.target;
+        
+        if (target.type === 'email') {
+            if (target.value && !isValidEmail(target.value)) {
+                showError(target, 'Zadejte platný e-mail');
+            } else {
+                clearError(target);
+            }
+        }
+        
+        if (target.type === 'tel') {
+            if (!isValidPhone(target.value)) {
+                showError(target, 'Zadejte platné telefonní číslo (např. +420 123 456 789)');
+            } else {
+                clearError(target);
+            }
+        }
+        
+        if (target.required && !target.value.trim()) {
+            showError(target, 'Toto pole je povinné');
+        } else if (target.required && target.value.trim()) {
+            clearError(target);
+        }
+    });
+    
+    
+    // Funkce pro formátování data
+    function formatClickDate() {
+        const now = new Date();
+        const day = now.getDate();
+        const month = now.getMonth() + 1;
+        const year = now.getFullYear();
+        return `${day}.${month}.${year}`;
+    }
+
+    // Příprava dat pro webhook
+    function prepareWebhookData(formData) {
+        
+        // Sestavení dat pro webhook
+        const webhookData = {
+            // ID zákazníka
+            customerId: window.getBewitCustomerId ? window.getBewitCustomerId() : null,
+            
+            // Datum odeslání formuláře
+            clickDate: formatClickDate(),
+            
+            // Základní údaje z formuláře
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            
+            // Souhlasy
+            privacyConsent: formData.get('privacy-consent') === 'on',
+            marketingConsent: formData.get('marketing-consent') === 'on',
+            
+            // Tagy
+            tags: WEBHOOK_CONFIG.tags,
+            
+            // Metadata
+            timestamp: new Date().toISOString(),
+            source: 'coffee_invitation_form',
+            url: window.location.href,
+            userAgent: navigator.userAgent
+        };
+        
+        return webhookData;
+    }
+    
+    // Odeslání dat na webhook
+    async function sendToWebhook(data) {
+        // Pokud není webhook URL nastavena, simulujeme úspěch
+        if (!WEBHOOK_CONFIG.url || WEBHOOK_CONFIG.url.trim() === '') {
+            console.log('Webhook URL není nastavena. Data by byla odeslána:', data);
+            return { success: true, simulated: true };
+        }
+        
+        try {
+            const response = await fetch(WEBHOOK_CONFIG.url, {
+                method: WEBHOOK_CONFIG.method,
+                headers: WEBHOOK_CONFIG.headers,
+                body: JSON.stringify(data)
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const result = await response.json().catch(() => ({}));
+            return { success: true, response: result };
+            
+        } catch (error) {
+            console.error('Chyba při odesílání na webhook:', error);
+            return { success: false, error: error.message };
+        }
+    }
+    
+    // Zpracování odeslání formuláře
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let isValid = true;
+        const formData = new FormData(form);
+        
+        // Validace povinných polí
+        const requiredFields = form.querySelectorAll('[required]');
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                showError(field, 'Toto pole je povinné');
+                isValid = false;
+            } else {
+                clearError(field);
+            }
+        });
+        
+        // Validace e-mailu
+        const emailField = form.querySelector('#email');
+        if (emailField.value && !isValidEmail(emailField.value)) {
+            showError(emailField, 'Zadejte platný e-mail');
+            isValid = false;
+        }
+        
+        // Validace telefonu
+        const phoneField = form.querySelector('#phone');
+        if (!isValidPhone(phoneField.value)) {
+            showError(phoneField, 'Zadejte platné telefonní číslo');
+            isValid = false;
+        }
+        
+        
+        if (!isValid) {
+            // Scroll k prvnímu chybnému poli
+            const firstError = form.querySelector('.error-message');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+        
+        // Animace tlačítka při odesílání
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Odesílám...';
+        submitBtn.style.background = '#999';
+        
+        // Příprava dat pro webhook
+        const webhookData = prepareWebhookData(formData);
+        
+        // Ujistíme se, že máme customerID
+        if (!webhookData.customerId) {
+            webhookData.customerId = window.getBewitCustomerId ? window.getBewitCustomerId() : null;
+        }
+        
+        // Uložení dat do localStorage pro použití na thank-you stránce
+        localStorage.setItem('coffeeFormData', JSON.stringify(webhookData));
+        
+        // Změna textu tlačítka
+        submitBtn.textContent = 'Odesílám...';
+        submitBtn.style.background = '#28a745';
+        
+        // Nejprve odešleme webhook pro coffee formulář
+        sendToWebhook(webhookData).then(result => {
+            if (result.success) {
+                console.log('✅ Coffee webhook úspěšně odeslán');
+                submitBtn.textContent = 'Přesměrovávám...';
+                
+                // Po úspěšném odeslání webhooku přesměrujeme na thank-you stránku
+                setTimeout(() => {
+                    window.location.href = 'thank-you.html';
+                }, 500);
+            } else {
+                console.error('❌ Chyba při odesílání coffee webhooku:', result.error);
+                // I při chybě webhooku přesměrujeme (webhook není kritický)
+                submitBtn.textContent = 'Přesměrovávám...';
+                setTimeout(() => {
+                    window.location.href = 'thank-you.html';
+                }, 500);
+            }
+        }).catch(error => {
+            console.error('❌ Neočekávaná chyba při coffee webhooku:', error);
+            // I při chybě přesměrujeme
+            submitBtn.textContent = 'Přesměrovávám...';
+            setTimeout(() => {
+                window.location.href = 'thank-you.html';
+            }, 500);
+        });
+    });
+
+    // === CUSTOM SELECT DROPDOWN ===
+    const customSelect = document.querySelector('.custom-select');
+    if (customSelect) {
+        const trigger = customSelect.querySelector('.custom-select-trigger');
+        const options = customSelect.querySelector('.custom-select-options');
+        const hiddenSelect = customSelect.querySelector('select');
+        const optionElements = customSelect.querySelectorAll('.custom-select-option');
+        
+        // Otevření/zavření dropdownu
+        trigger.addEventListener('click', function() {
+            trigger.classList.toggle('active');
+            options.classList.toggle('active');
+        });
+        
+        // Výběr možnosti
+        optionElements.forEach(option => {
+            option.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+                const text = this.textContent;
+                
+                // Pokud je to placeholder, ignoruj
+                if (this.classList.contains('placeholder')) {
+                    return;
+                }
+                
+                // Aktualizace zobrazení
+                trigger.querySelector('span').textContent = text;
+                trigger.setAttribute('data-value', value);
+                
+                // Aktualizace skrytého selectu
+                hiddenSelect.value = value;
+                
+                // Odstranění placeholder třídy
+                if (value) {
+                    trigger.classList.remove('placeholder');
+                } else {
+                    trigger.classList.add('placeholder');
+                }
+                
+                // Zavření dropdownu
+                trigger.classList.remove('active');
+                options.classList.remove('active');
+                
+                // Trigger change event pro validaci
+                const changeEvent = new Event('change', { bubbles: true });
+                hiddenSelect.dispatchEvent(changeEvent);
+                
+                // Odstranění chybové hlášky
+                clearError(hiddenSelect);
+            });
+        });
+        
+        // Zavření při kliknutí mimo
+        document.addEventListener('click', function(e) {
+            if (!customSelect.contains(e.target)) {
+                trigger.classList.remove('active');
+                options.classList.remove('active');
+            }
+        });
+        
+        // Zavření při stisku Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                trigger.classList.remove('active');
+                options.classList.remove('active');
+            }
+        });
+
+        // Navigace klávesnicí
+        let currentIndex = -1;
+        const selectableOptions = Array.from(optionElements).filter(opt => !opt.classList.contains('placeholder'));
+        
+        trigger.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                trigger.click();
+            } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                
+                if (!options.classList.contains('active')) {
+                    trigger.click();
+                    return;
+                }
+                
+                if (e.key === 'ArrowDown') {
+                    currentIndex = Math.min(currentIndex + 1, selectableOptions.length - 1);
+                } else {
+                    currentIndex = Math.max(currentIndex - 1, 0);
+                }
+                
+                // Zvýrazni aktuální možnost
+                selectableOptions.forEach((opt, i) => {
+                    opt.classList.toggle('highlighted', i === currentIndex);
+                });
+                
+                // Scroll do view
+                if (selectableOptions[currentIndex]) {
+                    selectableOptions[currentIndex].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'Enter' && currentIndex >= 0) {
+                e.preventDefault();
+                selectableOptions[currentIndex].click();
+                currentIndex = -1;
+            }
+        });
+
+        // Přidání focus stylu pro accessibility
+        trigger.setAttribute('tabindex', '0');
+        trigger.setAttribute('role', 'combobox');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute('aria-haspopup', 'listbox');
+        
+        options.setAttribute('role', 'listbox');
+        optionElements.forEach((opt, i) => {
+            if (!opt.classList.contains('placeholder')) {
+                opt.setAttribute('role', 'option');
+                opt.setAttribute('tabindex', '-1');
+            }
+        });
+
+        // Aktualizace aria-expanded
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'class') {
+                    const isActive = trigger.classList.contains('active');
+                    trigger.setAttribute('aria-expanded', isActive);
+                }
+            });
+        });
+        observer.observe(trigger, { attributes: true });
+    }
+})();
+    </script>
+</body>
+</html>
