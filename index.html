@@ -1907,13 +1907,13 @@
     // KONFIGURACE WEBHOOKU PRO AFFILIATE REGISTRACI
     // ===========================================
     const AFFILIATE_WEBHOOK_CONFIG = {
-        // URL webhooku pro affiliate registrace
-        url: 'https://n8n.srv980546.hstgr.cloud/webhook-test/d8c556b6-eb98-4227-8204-6b2110675513', // Webhook pro affiliate program
+        // URL webhooku pro affiliate registrace - KROK 1/2
+        url: 'https://n8n.srv980546.hstgr.cloud/webhook/e2c6a121-46be-42bd-a4d1-a77a514c2cb3',
         
         // Tagy pro affiliate registraci
         tags: [
-            'Affiliate', // Hlavní tag stejný jako u kavy
-            'register_universal'  // Subtag pro registraci
+            'Affiliate',        // TAG 1
+            'Ambassador/MLM'    // TAG 2
         ].filter(tag => tag.length > 0),
         
         // Metoda HTTP
@@ -2052,14 +2052,14 @@
     // KONFIGURACE WEBHOOKU A TAGŮ
     // ===========================================
     const WEBHOOK_CONFIG = {
-        // URL webhooku pro coffee formulář
-        url: 'https://n8n.srv980546.hstgr.cloud/webhook-test/597fec26-b6b4-4f43-a931-672302d334ee', // Coffee webhook
+        // URL webhooku pro coffee formulář - KROK 1/2
+        url: 'https://n8n.srv980546.hstgr.cloud/webhook/e2c6a121-46be-42bd-a4d1-a77a514c2cb3',
         
-        // Tagy pro kategorizaci - lze přidat více tagů
+        // Tagy pro kategorizaci
         tags: [
-            'Affiliate', // TAG 1: Přidejte první tag (např. "kava-ostrava")
-            'contact_demand'  // TAG 2: Přidejte druhý tag (např. "affiliate-lead")
-        ].filter(tag => tag.length > 0), // Odfiltruje prázdné tagy
+            'Affiliate',        // TAG 1
+            'Ambassador/MLM'    // TAG 2
+        ].filter(tag => tag.length > 0),
         
         // Metoda HTTP (obvykle POST)
         method: 'POST',
