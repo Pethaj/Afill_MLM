@@ -101,6 +101,7 @@
             padding: 60px 40px;
             margin-bottom: 40px;
             text-align: center;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -124,6 +125,7 @@
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-subtle);
             padding: 50px 40px;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -194,6 +196,7 @@
             color: var(--color-white);
             font-weight: 500;
             transition: all 0.3s ease;
+            -webkit-user-select: none;
             user-select: none;
         }
 
@@ -301,6 +304,7 @@
             color: var(--color-white);
             font-weight: 500;
             transition: all 0.3s ease;
+            -webkit-user-select: none;
             user-select: none;
         }
 
@@ -482,19 +486,20 @@
         <!-- === DĚKOVNÁ SEKCE === -->
         <section class="section">
             <div class="thank-you-section">
-                <div class="checkmark">✓</div>
-                <h1>Skvěle. Ještě pár detailů a můžeme spolu začít!</h1>
-                <p style="font-size: 20px; margin-bottom: 30px;">Abychom vám mohli nabídnout nejlepší podporu, řekněte nám prosím, jak chcete s BEWIT spolupracovat. Formulář vám zabere jen 1–2 minuty.</p>
+                <!-- Odstraněna zelená fajfka -->
+                <h1>Krok 2/2 – O vás a spolupráci</h1>
+                <h2>Skvěle. Ještě pár detailů a můžeme spolu začít!</h2>
+                <p class="thank-you-section-description">Abychom vám mohli nabídnout nejlepší podporu, řekněte nám prosím, jak chcete s BEWIT spolupracovat. Formulář vám zabere jen 1–2 minuty.</p>
                 <!-- <p style="font-size: 18px; color: var(--color-white); opacity: 0.9;">Prosíme ještě pár vteřin k vyplnění dotazníku.</p> -->
             </div>
 
             <!-- === DOTAZNÍK === -->
             <div class="survey-form">
-                <div style="background: rgba(255,255,255,0.1); padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; text-align: center; border: 2px solid rgba(255,255,255,0.2);">
-                    <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--color-white);">Krok 2/2 – O vás a spolupráci</p>
+                <div class="step-indicator-container">
+                    
                 </div>
-                <h2>Dotazník pro nové partnery</h2>
-                <p style="font-size: 20px; margin-bottom: 30px;">Každý partner je pro nás jedinečný. Proto bychom rádi věděli, jakým způsobem chcete sdílet BEWIT produkty a co vám v tom máme usnadnit. Díky tomu vám dokážeme připravit přesně takové nástroje, podporu a podklady, které využijete nejlépe.</p>
+                <h2>Pro nové partnery</h2>
+                <p class="survey-section-description">Každý partner je pro nás jedinečný. Proto bychom rádi věděli, jakým způsobem chcete sdílet BEWIT produkty a co vám v tom máme usnadnit. Díky tomu vám dokážeme připravit přesně takové nástroje, podporu a podklady, které využijete nejlépe.</p>
                 <form id="affiliate-survey" method="POST" action="https://n8n.srv980546.hstgr.cloud/webhook/6fb040ae-e788-469b-bcf3-909c4c3d2f44">
                     
                     <!-- Profese -->
@@ -509,23 +514,23 @@
                         <div class="checkbox-group">
                             <div class="checkbox-item">
                                 <input type="radio" id="network-zacatecnik" name="network-size" value="zacatecnik" required>
-                                <label for="network-zacatecnik" class="checkbox-label">Začátečník (0-50 kontaktů)</label>
+                                <label for="network-zacatecnik" class="checkbox-label">0-50 kontaktů</label>
                             </div>
                             <div class="checkbox-item">
                                 <input type="radio" id="network-mala" name="network-size" value="mala" required>
-                                <label for="network-mala" class="checkbox-label">Malá síť (50-200 kontaktů)</label>
+                                <label for="network-mala" class="checkbox-label">50-200 kontaktů</label>
                             </div>
                             <div class="checkbox-item">
                                 <input type="radio" id="network-stredni" name="network-size" value="stredni" required>
-                                <label for="network-stredni" class="checkbox-label">Střední síť (200-1000 kontaktů)</label>
+                                <label for="network-stredni" class="checkbox-label">200-1000 kontaktů</label>
                             </div>
                             <div class="checkbox-item">
                                 <input type="radio" id="network-velka" name="network-size" value="velka" required>
-                                <label for="network-velka" class="checkbox-label">Velká síť (1000-5000 kontaktů)</label>
+                                <label for="network-velka" class="checkbox-label">1000-5000 kontaktů</label>
                             </div>
                             <div class="checkbox-item">
                                 <input type="radio" id="network-velmi-velka" name="network-size" value="velmi-velka" required>
-                                <label for="network-velmi-velka" class="checkbox-label">Velmi velká síť (5000+ kontaktů)</label>
+                                <label for="network-velmi-velka" class="checkbox-label">5000+ kontaktů</label>
                             </div>
                         </div>
                     </div>
@@ -592,7 +597,7 @@
                         </div>
                     </div>-->
                     <!-- Typ podpory -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Jakou podporu byste nejvíce uvítali?</label>
                         <div class="checkbox-group">
                             <div class="checkbox-item">
@@ -612,7 +617,7 @@
                                 <label for="support-konzultace" class="checkbox-label">Osobní konzultaci</label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Roky v affiliate -->
                     <!-- <div class="form-group">
@@ -645,7 +650,7 @@
                     </div> -->
 
                     <!-- Osobní setkání -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Máte zájem o osobní setkání?</label>
                         <div class="radio-group">
                             <div class="radio-item">
@@ -657,9 +662,9 @@
                                 <label for="meeting-no" class="radio-label">Ne</label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <button type="submit" class="btn">Dokončit registraci</button>
+                    <button type="submit" class="btn">Odeslat formulář</button>
                     
                     <p style="text-align: center; margin-top: 20px; font-size: 15px; color: rgba(255,255,255,0.8); font-style: italic; line-height: 1.6;">
                         (Po odeslání formuláře vám vytvoříme účet a zašleme přístupové údaje. O vše ostatní se postaráme my.)
