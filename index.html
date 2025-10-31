@@ -1912,22 +1912,35 @@
     
     // Generování unikátního ID zákazníka
     function generateCustomerId() {
-        // Kombinace timestamp a náhodného čísla pro jedinečnost
+        // Kombinace timestamp, náhodného čísla a specifického subtagu pro tento landing page
         const timestamp = Date.now().toString(36);
         const random = Math.random().toString(36).substr(2, 9);
-        return `customer_${timestamp}_${random}`;
+        const additionalRandom = Math.random().toString(36).substr(2, 6);
+        const landingPageCode = 'AFMLM'; // Specifický kód pro Affiliate MLM landing page
+        const subtag = 'LP001'; // Subtag pro tento konkrétní landing page
+        
+        const newId = `customer_${landingPageCode}_${subtag}_${timestamp}_${random}_${additionalRandom}`;
+        console.log('🆔 NOVÉ ID VYGENEROVÁNO:', newId);
+        return newId;
     }
     
     // Získání nebo vytvoření ID zákazníka
     function getOrCreateCustomerId() {
         let customerId = localStorage.getItem('bewitCustomerId');
         
+        // KONTROLA: Pokud existující ID neobsahuje náš subtag, vygenerujeme nové
+        if (customerId && !customerId.includes('AFMLM_LP001')) {
+            console.log('⚠️ STARÉ ID DETEKOVÁNO (bez subtagu):', customerId);
+            localStorage.removeItem('bewitCustomerId');
+            customerId = null;
+        }
+        
         if (!customerId) {
             customerId = generateCustomerId();
             localStorage.setItem('bewitCustomerId', customerId);
-            console.log('Nové ID zákazníka vygenerováno:', customerId);
+            console.log('✅ NOVÉ ID ZÁKAZNÍKA ULOŽENO:', customerId);
         } else {
-            console.log('Existující ID zákazníka načteno:', customerId);
+            console.log('✅ PLATNÉ ID ZÁKAZNÍKA NAČTENO:', customerId);
         }
         
         return customerId;
@@ -1953,8 +1966,13 @@
     
     // Inicializace po načtení DOM
     document.addEventListener('DOMContentLoaded', function() {
+        // FORCE RESET - odkomentujte pro vymazání starých ID (pouze pro testování)
+        // localStorage.removeItem('bewitCustomerId');
+        // console.log('🔄 LOCALSTORAGE VYMAZÁN - BUDE VYGENEROVÁNO NOVÉ ID');
+        
         // Inicializujeme ID zákazníka hned při načtení stránky
-        getOrCreateCustomerId();
+        const customerId = getOrCreateCustomerId();
+        console.log('🚀 INICIALIZACE DOKONČENA, ID ZÁKAZNÍKA:', customerId);
         
         // Nastavíme tracking pro tlačítka
         setupCustomerIdTracking();
