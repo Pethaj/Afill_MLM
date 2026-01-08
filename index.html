@@ -1485,7 +1485,7 @@
             <div class="container" style="position: relative; z-index: 1;">
                 <div class="coffee-video-container">
                     <video autoplay muted loop playsinline>
-                        <source src="http://bewit.love/images/funnel/funnel_short_v1.mp4" type="video/mp4">
+                        <source src="https://bewit.love/images/funnel/funnel_short_v1.mp4" type="video/mp4">
                         Váš prohlížeč nepodporuje video element.
                     </video>
                 </div>
@@ -2205,6 +2205,16 @@
                 // Získáme ID zákazníka
                 const customerId = window.getBewitCustomerId ? window.getBewitCustomerId() : null;
                 
+                // Detekce jazykové mutace z URL cesty
+                const getCountryFromUrl = () => {
+                    const path = window.location.pathname;
+                    if (path.includes('/sk/')) return 'SK';
+                    if (path.includes('/pl/')) return 'PL';
+                    if (path.includes('/hu/')) return 'HU';
+                    if (path.includes('/ro/')) return 'RO';
+                    return 'CZ'; // výchozí
+                };
+                
                 // Příprava dat pro webhook
                 const webhookData = {
                     // ID zákazníka
@@ -2223,6 +2233,9 @@
                     
                     // Datum registrace
                     registrationDate: formatClickDate(),
+                    
+                    // Jazyková mutace / Země
+                    country: getCountryFromUrl(),
                     
                     // Tagy
                     tags: AFFILIATE_WEBHOOK_CONFIG.tags,
@@ -2402,6 +2415,16 @@
     // Příprava dat pro webhook
     function prepareWebhookData(formData) {
         
+        // Detekce jazykové mutace z URL cesty
+        const getCountryFromUrl = () => {
+            const path = window.location.pathname;
+            if (path.includes('/sk/')) return 'SK';
+            if (path.includes('/pl/')) return 'PL';
+            if (path.includes('/hu/')) return 'HU';
+            if (path.includes('/ro/')) return 'RO';
+            return 'CZ'; // výchozí
+        };
+        
         // Sestavení dat pro webhook
         const webhookData = {
             // ID zákazníka
@@ -2419,6 +2442,9 @@
             // Souhlasy
             privacyConsent: formData.get('privacy-consent') === 'on',
             marketingConsent: formData.get('marketing-consent') === 'on',
+            
+            // Jazyková mutace / Země
+            country: getCountryFromUrl(),
             
             // Tagy
             tags: WEBHOOK_CONFIG.tags,
@@ -2693,7 +2719,10 @@
         const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
         
         const langMap = {
-            'sk': './sk/index.html'
+            'sk': './sk/index.html',
+            'pl': './pl/index.html',
+            'hu': './hu/index.html',
+            'ro': './ro/index.html'
         };
         
         for (const [lang, path] of Object.entries(langMap)) {

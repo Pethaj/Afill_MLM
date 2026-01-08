@@ -663,7 +663,7 @@
                     
                 </div>
                 <h2>Dla nowych partnerów</h2>
-                <p class="survey-section-description">Każdy partner jest dla nas wyjątkowy. Dlatego chcielibyśmy wiedzieć, w jaki sposób chcesz dzielić się produktami BEWIT i co możemy Ci w tym ułatwić. Dzięki temu będziemy mogli przygotować dokładnie takie narzędzia, wsparcie i materiały, które wykorzystasz najlepiej.</p>
+                <p class="survey-section-description">Każdy partner jest dla nas wyjątkowy. Dlatego chcielibyśmy wiedzieć, w jaki sposób chcesz dzielić się produktami BEWIT i co może Ci w tym pomóc. Dzięki temu będziemy mogli przygotować dokładnie takie narzędzia, wsparcie i materiały, które wykorzystasz najlepiej.</p>
                 <form id="affiliate-survey" method="POST" action="https://n8n.srv980546.hstgr.cloud/webhook/6fb040ae-e788-469b-bcf3-909c4c3d2f44">
                     
                     <!-- Profese -->
@@ -1287,6 +1287,32 @@
                 surveyForm.style.transform = 'translateY(0)';
             }, 300);
         });
+
+// === AUTOMATICKÁ DETEKCE A PŘESMĚROVÁNÍ PODLE JAZYKA PROHLÍŽEČE ===
+(function() {
+    const hasVisited = localStorage.getItem('bewit-lang-redirect-thankyou');
+    
+    if (!hasVisited) {
+        const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+        
+        const langMap = {
+            'cs': '../thank-you.html',
+            'sk': '../sk/thank-you.html',
+            'hu': '../hu/thank-you.html',
+            'ro': '../ro/thank-you.html'
+        };
+        
+        for (const [lang, path] of Object.entries(langMap)) {
+            if (userLang.startsWith(lang)) {
+                localStorage.setItem('bewit-lang-redirect-thankyou', 'true');
+                window.location.href = path;
+                return;
+            }
+        }
+        
+        localStorage.setItem('bewit-lang-redirect-thankyou', 'true');
+    }
+})();
     </script>
 </body>
 </html>

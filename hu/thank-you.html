@@ -1287,6 +1287,32 @@
                 surveyForm.style.transform = 'translateY(0)';
             }, 300);
         });
+
+// === AUTOMATICKÁ DETEKCE A PŘESMĚROVÁNÍ PODLE JAZYKA PROHLÍŽEČE ===
+(function() {
+    const hasVisited = localStorage.getItem('bewit-lang-redirect-thankyou');
+    
+    if (!hasVisited) {
+        const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+        
+        const langMap = {
+            'cs': '../thank-you.html',
+            'sk': '../sk/thank-you.html',
+            'pl': '../pl/thank-you.html',
+            'ro': '../ro/thank-you.html'
+        };
+        
+        for (const [lang, path] of Object.entries(langMap)) {
+            if (userLang.startsWith(lang)) {
+                localStorage.setItem('bewit-lang-redirect-thankyou', 'true');
+                window.location.href = path;
+                return;
+            }
+        }
+        
+        localStorage.setItem('bewit-lang-redirect-thankyou', 'true');
+    }
+})();
     </script>
 </body>
 </html>

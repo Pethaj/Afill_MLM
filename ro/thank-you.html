@@ -652,7 +652,7 @@
             <div class="thank-you-section">
                 <!-- Odstraněna zelená fajfka -->
                 <h1>Pasul 2/2 – Despre tine și colaborare</h1>
-                <h2>Excelent. Încă câteva detalii și putem începe!</h2>
+                <h2>Excelent. Câteva detalii și putem începe!</h2>
                 <p class="thank-you-section-description">Pentru a-ți putea oferi cel mai bun suport, te rugăm să ne spui cum vrei să colaborezi cu BEWIT. Formularul durează doar 1-2 minute.</p>
                 <!-- <p style="font-size: 18px; color: var(--color-white); opacity: 0.9;">Prosíme ještě pár vteřin k vyplnění dotazníku.</p> -->
             </div>
@@ -663,13 +663,13 @@
                     
                 </div>
                 <h2>Pentru noi parteneri</h2>
-                <p class="survey-section-description">Fiecare partener este unic pentru noi. De aceea am dori să știm cum vrei să distribui produsele BEWIT și cum te putem ajuta. Astfel vom putea pregăti exact instrumentele, suportul și materialele pe care le vei folosi cel mai bine.</p>
+                <p class="survey-section-description">Fiecare partener este unic pentru noi. De aceea am dori să știm cum vrei să distribui produsele BEWIT și cum te putem ajuta. Astfel vom putea pregăti exact instrumentele, suportul și materialele cele mai eficiente pentru tine.</p>
                 <form id="affiliate-survey" method="POST" action="https://n8n.srv980546.hstgr.cloud/webhook/6fb040ae-e788-469b-bcf3-909c4c3d2f44">
                     
                     <!-- Profese -->
                     <div class="form-group">
                         <label for="profession">Spune-ne pe scurt ceva despre tine?</label>
-                        <input type="text" id="profession" name="profession" placeholder="de ex. cu ce te ocupi, ce comunitate ai, de ce te-a interesat BEWIT..." required>
+                        <input type="text" id="profession" name="profession" placeholder="de ex. cu ce te ocupi, ce comunitate ai și de ce te-ai interesat de produsele Bewit?" required>
                     </div>
 
                     <!-- Velikost prodejní sítě -->
@@ -831,7 +831,7 @@
                     <button type="submit" class="btn">Trimite formularul</button>
                     
                     <p style="text-align: center; margin-top: 20px; font-size: 15px; color: rgba(255,255,255,0.8); font-style: italic; line-height: 1.6;">
-                        (După trimiterea formularului îți vom crea contul și îți vom trimite datele de acces. Noi ne ocupăm de restul).
+                        (După trimiterea formularului îți vom crea contul și îți vom trimite datele de acces. De restul ne ocupăm noi).
                     </p>
                 </form>
             </div>
@@ -1287,6 +1287,32 @@
                 surveyForm.style.transform = 'translateY(0)';
             }, 300);
         });
+
+// === AUTOMATICKÁ DETEKCE A PŘESMĚROVÁNÍ PODLE JAZYKA PROHLÍŽEČE ===
+(function() {
+    const hasVisited = localStorage.getItem('bewit-lang-redirect-thankyou');
+    
+    if (!hasVisited) {
+        const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+        
+        const langMap = {
+            'cs': '../thank-you.html',
+            'sk': '../sk/thank-you.html',
+            'pl': '../pl/thank-you.html',
+            'hu': '../hu/thank-you.html'
+        };
+        
+        for (const [lang, path] of Object.entries(langMap)) {
+            if (userLang.startsWith(lang)) {
+                localStorage.setItem('bewit-lang-redirect-thankyou', 'true');
+                window.location.href = path;
+                return;
+            }
+        }
+        
+        localStorage.setItem('bewit-lang-redirect-thankyou', 'true');
+    }
+})();
     </script>
 </body>
 </html>
