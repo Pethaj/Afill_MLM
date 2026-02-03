@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M9XP2K5S');</script>
+<!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FEJ2B9L3TQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FEJ2B9L3TQ');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vielen Dank für Ihr Interesse | Bewit PARTNERPROGRAMM</title>
@@ -604,6 +620,10 @@
     </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9XP2K5S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <!-- Jazykový přepínač - roletka -->
     <div class="language-switcher">
         <div class="language-dropdown" id="languageDropdown">
@@ -696,8 +716,20 @@
                                 <label for="network-velka" class="checkbox-label">1000-5000 Kontakte</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="radio" id="network-velmi-velka" name="network-size" value="5000+" required>
-                                <label for="network-velmi-velka" class="checkbox-label">5000+ Kontakte</label>
+                                <input type="radio" id="network-5000-20000" name="network-size" value="5000-20000" required>
+                                <label for="network-5000-20000" class="checkbox-label">5000-20000 Kontakte</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="network-20000-50000" name="network-size" value="20000-50000" required>
+                                <label for="network-20000-50000" class="checkbox-label">20000-50000 Kontakte</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="network-50000-100000" name="network-size" value="50000-100000" required>
+                                <label for="network-50000-100000" class="checkbox-label">50000-100000 Kontakte</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="network-nad-100000" name="network-size" value="100000+" required>
+                                <label for="network-nad-100000" class="checkbox-label">100000+ Kontakte</label>
                             </div>
                         </div>
                     </div>
@@ -735,6 +767,12 @@
                         <div id="promotion-other-input" style="display: none; margin-top: 15px;">
                             <input type="text" id="promotion-other-text" name="promotion-other-text" placeholder="Bitte geben Sie an, wie...">
                         </div>
+                    </div>
+
+                    <!-- Zu welcher Uhrzeit können wir Sie anrufen -->
+                    <div class="form-group">
+                        <label for="call-time">Zu welcher Uhrzeit können wir Sie anrufen?</label>
+                        <input type="text" id="call-time" name="call-time" placeholder="z.B. 9:00-12:00 oder jederzeit" required>
                     </div>
 
                     <button type="submit" class="btn">Formular absenden</button>
